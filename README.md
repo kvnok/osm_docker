@@ -8,18 +8,40 @@ To get started with this project, you can build and run the Docker container usi
 
 ### Build the Docker Image
 ```bash
-docker build -t osm-map-project .
+docker build -t osm-map-project-image .
 ```
-Run the Container
+OR
 ```bash
-docker run -p 9000:9000 osm-map-project
+make build
 ```
-Stopping and Cleaning Up
+### Run
+```bash
+docker run --name osm-map-project -p 9000:9000 -d osm-map-project-image
+```
+OR
+```bash
+make run
+```
+### Stopping
 ```bash
 docker stop osm-map-project
 ```
-Cleaning Up
+OR
 ```bash
-docker rm osm-map-project && docker rmi osm-map-project
+make stop
 ```
-Enjoy exploring OpenStreetMap!
+### Cleaning up
+```bash
+docker rm osm-map-project && docker rmi osm-map-project-image
+```
+OR
+```bash
+make clean
+```
+## I prefer
+```bash
+make
+```
+```bash
+make fclean
+```
