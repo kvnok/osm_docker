@@ -13,10 +13,9 @@ app.use(express.static('public'));
 io.on('connection', (socket) => {
   console.log('A user connected');
 
-  // Handle incoming messages
-  socket.on('message', (data) => {
-    console.log('Message received: ', data);
-    io.emit('message', data); // Broadcast message to all clients
+  // Example: Handling a marker addition
+  socket.on('add-marker', (data) => {
+    io.emit('add-marker', data);
   });
 
   socket.on('disconnect', () => {

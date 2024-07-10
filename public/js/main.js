@@ -7,11 +7,14 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // Initialize Socket.io
 var socket = io();
 
-// Listen for incoming messages
-socket.on('message', (data) => {
-    console.log('Message received: ', data);
-    // You can update the map or UI with the received data
+// Listen for incoming add-marker events
+socket.on('add-marker', (data) => {
+    L.marker([data.lat, data.lng]).addTo(map);
 });
 
-// Example of sending a message
-socket.emit('message', 'Hello from client!');
+// Example: Adding a marker and emitting an event
+map.on('click', function(e) {
+    var markerData = { lat: e.latlng.lat, lng: e.latlng.lng };
+    socket.emit('add-marker', markerData);
+    L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
+});

@@ -12,8 +12,6 @@ stop:
 clean:
 	docker rm osm-map-project && docker rmi osm-map-project-image
 
-fclean:
-	stop
-	clean
+fclean: stop clean
 
 re: all build run stop clean fclean
