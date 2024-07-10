@@ -1,7 +1,7 @@
 # OSM Docker Project
 
 This project is an exploration of OpenStreetMap (OSM), focusing on running it within a Docker container and utilizing Socket.IO for real-time communication.
-
+![](clickdemo.gif)
 ## Getting Started
 
 To get started with this project, you can build and run the Docker container using the following commands:
