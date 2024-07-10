@@ -1,13 +1,14 @@
 {
 	"name": "osm-map-project",
 	"version": "1.0.0",
-	"description": "A simple website with OSM map data using Leaflet and Docker",
+	"description": "A simple website with OSM map data using Leaflet, Socket.io, and Docker",
 	"main": "server.js",
 	"scripts": {
 	  "start": "node server.js"
 	},
 	"dependencies": {
-	  "express": "^4.17.1"
+	  "express": "^4.17.1",
+	  "socket.io": "^4.0.0"
 	}
   }
   
